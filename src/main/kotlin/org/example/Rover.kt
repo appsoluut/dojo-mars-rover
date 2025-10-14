@@ -21,12 +21,9 @@ class Rover {
     }
 
     private fun move() {
-        when (state.heading) {
-            Heading.EAST -> state.positionX++
-            Heading.SOUTH -> state.positionY--
-            Heading.WEST -> state.positionX--
-            Heading.NORTH -> state.positionY++
-        }
+        val (updatedX, updatedY) = state.heading.move(state.positionX, state.positionY)
+        state.positionX = updatedX
+        state.positionY = updatedY
     }
 
     private fun turnRight() {

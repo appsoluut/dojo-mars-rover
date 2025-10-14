@@ -1,28 +1,12 @@
 # TODO
-- [ ] Complexity
-  - [x] long method
-  - [ ] duplicated code
-  - 
-# Mikado
-- [ ] Clean up constants and private fields
-  - [ ] Move move() into Heading.move(Position)
-  - [x] Move turnLeft() into Heading.turnLeft()
-  - [x] Move turnRight() into Heading.turnRight()
-    - [x] Remove HEADING_* constants
-      - [x] in move() compare to heading enum
-      - [x] in turnRight() compare to heading enum
-      - [x] in turnLeft() compare to heading enum
-        - [x] state.heading in Rover.constructor to enum
-          - [x] Change heading Char in RoverState to Heading enum
-            - [x] Create Heading enum
-
-# RPP
 - [ ] Reorder Responsibilities
   - [ ] long class
   - [ ] feature envy
   - [ ] inappropriate intimacy
   - [ ] data class
   - [ ] message chain
+
+# RPP
 - [ ] Refine Abstractions
   - [ ] long parameter list
   - [ ] data clump
@@ -40,3 +24,19 @@
   - [x] bad naming
   - [x] antipattern
   - [x] scopes
+- [x] Complexity
+  - [x] long method
+  - [x] duplicated code
+  -
+# Mikado
+- [x] Clean up constants and private fields
+  - [x] Move move() into Heading.move(Position)
+  - [x] Move turnLeft() into Heading.turnLeft()
+  - [x] Move turnRight() into Heading.turnRight()
+    - [x] Remove HEADING_* constants
+      - [x] in move() compare to heading enum
+      - [x] in turnRight() compare to heading enum
+      - [x] in turnLeft() compare to heading enum
+        - [x] state.heading in Rover.constructor to enum
+          - [x] Change heading Char in RoverState to Heading enum
+            - [x] Create Heading enum
