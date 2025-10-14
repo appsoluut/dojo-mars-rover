@@ -1,14 +1,10 @@
 # TODO
-- [x] Refine Abstractions
-  - [x] long parameter list
-  - [x] data clump
-  - [x] primitive obsession
-  - [x] middle man
-
-# Mikado
-- [x] remove move() from heading
-  - [x] use position.moveBy in RoverState.move
-  - [x] add moveBy to Position class
+- [ ] Command Pattern for go()
+  - [ ] Move command consts
+- [ ] Parser for Rover.constructor()
+  - [ ] Move parser consts
+  - [ ] magic string for ' ' char still in the split
+- [ ] Update ktlint check for multiline rule :')
 
 # RPP
 - [ ] Design Patterns
@@ -32,6 +28,11 @@
   - [x] inappropriate intimacy
   - [x] data class
   - [x] message chain
+- [x] Refine Abstractions
+  - [x] long parameter list
+  - [x] data clump
+  - [x] primitive obsession
+  - [x] middle man
 
 # Mikado
 - [x] Clean up constants and private fields
@@ -66,4 +67,6 @@
 - [x] Replace x, y with Position in Heading.move()
   - [x] RoverState.move use position
 - [x] Return position in move() instead of Pair
-
+- [x] remove move() from heading
+  - [x] use position.moveBy in RoverState.move
+  - [x] add moveBy to Position class
