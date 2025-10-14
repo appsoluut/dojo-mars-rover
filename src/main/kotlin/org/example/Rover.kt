@@ -44,9 +44,7 @@ class Rover {
     val position: String
         get() = "${state.positionX} ${state.positionY} ${state.direction}"
 
-    fun pos(): String {
-        return position
-    }
+    fun pos(): String = position
 
     private var state = RoverState()
 }

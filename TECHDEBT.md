@@ -4,6 +4,7 @@
     - [x] dead code
     - [x] magic strings/numbers
     - [x] bad naming
+    - [x] antipattern
     - [ ] scopes
 
 # RPP
