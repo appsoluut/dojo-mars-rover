@@ -2,7 +2,8 @@
 - [ ] Readability
     - [x] comments
     - [x] dead code
-    - [ ] magic strings/numbers
+    - [x] magic strings/numbers
+    - [ ] bad naming
     - [ ] scopes
 
 # RPP
