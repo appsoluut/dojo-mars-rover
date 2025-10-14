@@ -4,7 +4,8 @@ enum class Heading(val symbol: Char) {
     NORTH('N'),
     EAST('E'),
     SOUTH('S'),
-    WEST('W');
+    WEST('W'),
+    ;
 
     override fun toString(): String = symbol.toString()
 
