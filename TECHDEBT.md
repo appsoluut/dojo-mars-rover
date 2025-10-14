@@ -1,11 +1,18 @@
 # TODO
-
-# RPP
 - [ ] Refine Abstractions
   - [ ] long parameter list
   - [ ] data clump
   - [ ] primitive obsession
   - [ ] middle man
+
+# Mikado
+- [x] Remove deltaX, deltaY in Heading
+  - [x] NORTH, etc -> Vector(0, 1)
+    - [x] move -> return Pair but using vector
+      - [x] Add Vector to enum class Heading 
+        - [x] Create Vector data class
+
+# RPP
 - [ ] Design Patterns
 - [ ] SOLID++
 

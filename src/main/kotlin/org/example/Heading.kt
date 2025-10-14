@@ -1,10 +1,10 @@
 package org.example
 
-enum class Heading(val symbol: Char, val deltaX: Int, val deltaY: Int) {
-    NORTH('N', 0, 1),
-    EAST('E', 1, 0),
-    SOUTH('S', 0, -1),
-    WEST('W', -1, 0),
+enum class Heading(val symbol: Char, val vector: Vector) {
+    NORTH('N', Vector(0, 1)),
+    EAST('E', Vector(1, 0)),
+    SOUTH('S', Vector(0, -1)),
+    WEST('W', Vector(-1, 0)),
     ;
 
     fun turnLeft(): Heading =
@@ -26,7 +26,7 @@ enum class Heading(val symbol: Char, val deltaX: Int, val deltaY: Int) {
     fun move(
         x: Int,
         y: Int,
-    ): Pair<Int, Int> = Pair(x + deltaX, y + deltaY)
+    ): Pair<Int, Int> = Pair(x + vector.deltaX, y + vector.deltaY)
 
     override fun toString(): String = symbol.toString()
 
