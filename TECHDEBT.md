@@ -6,6 +6,14 @@
   - [ ] data class
   - [ ] message chain
 
+# Mikado
+- [ ] Change var to val (immutable)
+  - [ ] Rover.turnLeft use copy() on state
+  - [ ] Rover.turnRight use copy() on state
+  - [ ] Rover.move use copy() on state
+  - [ ] Rover.constructor use copy() on state
+    - [ ] Change RoverState to Data Class
+
 # RPP
 - [ ] Refine Abstractions
   - [ ] long parameter list
