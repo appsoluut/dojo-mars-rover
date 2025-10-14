@@ -25,8 +25,7 @@ class Rover {
 
     private fun move() {
         val (updatedX, updatedY) = state.heading.move(state.positionX, state.positionY)
-        state.positionX = updatedX
-        state.positionY = updatedY
+        state = state.copy(positionX = updatedX, positionY = updatedY)
     }
 
     private fun turnRight() {

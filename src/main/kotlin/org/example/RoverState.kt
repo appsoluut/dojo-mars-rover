@@ -1,7 +1,7 @@
 package org.example
 
 data class RoverState(
-    var positionX: Int = 0,
-    var positionY: Int = 0,
+    val positionX: Int = 0,
+    val positionY: Int = 0,
     var heading: Heading = Heading.NORTH,
 )
