@@ -8,10 +8,10 @@ class Rover {
                 state.copy(
                     positionX = command[ROVER_STARTING_POSITION_X].toInt(),
                     positionY = command[ROVER_STARTING_POSITION_Y].toInt(),
-                    heading =
-                        Heading.from(command[ROVER_FACING_DIRECTION][ROVER_COMMANDLIST_DIRECTION])
-                            ?: state.heading,
                 )
+            Heading.from(command[ROVER_FACING_DIRECTION][ROVER_COMMANDLIST_DIRECTION])?.let {
+                state = state.copy(heading = it)
+            }
         }
     }
 
