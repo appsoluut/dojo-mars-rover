@@ -49,12 +49,6 @@ class Rover {
     private var state = RoverState()
 }
 
-class RoverState {
-    var positionX: Int = 0
-    var positionY: Int = 0
-    var heading: Char = HEADING_NORTH
-}
-
 private const val ROVER_MINIMUM_NEEDED_COMMANDS = 3
 private const val ROVER_STARTING_POSITION_X = 0
 private const val ROVER_STARTING_POSITION_Y = 1
@@ -65,7 +59,7 @@ private const val COMMAND_TURN_LEFT = 'L'
 private const val COMMAND_TURN_RIGHT = 'R'
 private const val COMMAND_MOVE = 'M'
 
-private const val HEADING_EAST = 'E'
-private const val HEADING_NORTH = 'N'
-private const val HEADING_WEST = 'W'
-private const val HEADING_SOUTH = 'S'
+internal const val HEADING_EAST = 'E'
+internal const val HEADING_NORTH = 'N'
+internal const val HEADING_WEST = 'W'
+internal const val HEADING_SOUTH = 'S'

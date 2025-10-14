@@ -1,11 +1,4 @@
 # TODO
-- [ ] Readability
-    - [x] comments
-    - [x] dead code
-    - [x] magic strings/numbers
-    - [x] bad naming
-    - [x] antipattern
-    - [ ] scopes
 
 # RPP
 - [ ] Complexity
@@ -27,3 +20,10 @@
 
 # DONE
 - [x] Make ktlint pass checks
+- [x] Readability
+  - [x] comments
+  - [x] dead code
+  - [x] magic strings/numbers
+  - [x] bad naming
+  - [x] antipattern
+  - [x] scopes
