@@ -1,9 +1,9 @@
 # TODO
-
-# RPP
 - [ ] Complexity
   - [ ] long method
   - [ ] duplicated code
+
+# RPP
 - [ ] Reorder Responsibilities
   - [ ] long class
   - [ ] feature envy

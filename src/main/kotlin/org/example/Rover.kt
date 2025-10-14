@@ -13,31 +13,37 @@ class Rover {
     fun go(instructions: String) {
         for (instruction in instructions) {
             when (instruction) {
-                COMMAND_TURN_LEFT -> {
-                    when (state.heading) {
-                        HEADING_EAST -> state.heading = HEADING_NORTH
-                        HEADING_NORTH -> state.heading = HEADING_WEST
-                        HEADING_WEST -> state.heading = HEADING_SOUTH
-                        HEADING_SOUTH -> state.heading = HEADING_EAST
-                    }
-                }
-                COMMAND_TURN_RIGHT -> {
-                    when (state.heading) {
-                        HEADING_EAST -> state.heading = HEADING_SOUTH
-                        HEADING_SOUTH -> state.heading = HEADING_WEST
-                        HEADING_WEST -> state.heading = HEADING_NORTH
-                        HEADING_NORTH -> state.heading = HEADING_EAST
-                    }
-                }
-                COMMAND_MOVE -> {
-                    when (state.heading) {
-                        HEADING_EAST -> state.positionX++
-                        HEADING_SOUTH -> state.positionY--
-                        HEADING_WEST -> state.positionX--
-                        HEADING_NORTH -> state.positionY++
-                    }
-                }
+                COMMAND_TURN_LEFT -> turnLeft()
+                COMMAND_TURN_RIGHT -> turnRight()
+                COMMAND_MOVE -> move()
             }
+        }
+    }
+
+    private fun move() {
+        when (state.heading) {
+            HEADING_EAST -> state.positionX++
+            HEADING_SOUTH -> state.positionY--
+            HEADING_WEST -> state.positionX--
+            HEADING_NORTH -> state.positionY++
+        }
+    }
+
+    private fun turnRight() {
+        when (state.heading) {
+            HEADING_EAST -> state.heading = HEADING_SOUTH
+            HEADING_SOUTH -> state.heading = HEADING_WEST
+            HEADING_WEST -> state.heading = HEADING_NORTH
+            HEADING_NORTH -> state.heading = HEADING_EAST
+        }
+    }
+
+    private fun turnLeft() {
+        when (state.heading) {
+            HEADING_EAST -> state.heading = HEADING_NORTH
+            HEADING_NORTH -> state.heading = HEADING_WEST
+            HEADING_WEST -> state.heading = HEADING_SOUTH
+            HEADING_SOUTH -> state.heading = HEADING_EAST
         }
     }
 
