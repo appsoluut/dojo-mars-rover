@@ -11,8 +11,8 @@
   - [ ] Rover.turnLeft use copy() on state
   - [ ] Rover.turnRight use copy() on state
   - [ ] Rover.move use copy() on state
-  - [ ] Rover.constructor use copy() on state
-    - [ ] Change RoverState to Data Class
+  - [x] Rover.constructor use copy() on state
+    - [x] Change RoverState to Data Class
 
 # RPP
 - [ ] Refine Abstractions
