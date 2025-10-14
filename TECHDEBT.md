@@ -3,7 +3,7 @@
     - [x] comments
     - [x] dead code
     - [x] magic strings/numbers
-    - [ ] bad naming
+    - [x] bad naming
     - [ ] scopes
 
 # RPP

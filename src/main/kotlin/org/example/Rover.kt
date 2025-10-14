@@ -1,67 +1,67 @@
 package org.example
 
 class Rover {
-    constructor(p: String) {
-        val s = p.split(' ')
-        if (s.size >= ROVER_MINIMUM_NEEDED_COMMANDS) {
-            rs.xx = s[ROVER_STARTING_POSITION_X].toInt()
-            rs.yy = s[ROVER_STARTING_POSITION_Y].toInt()
-            rs.dd = s[ROVER_COMMANDLIST][ROVER_COMMANDLIST_FIRST_COMMAND]
+    constructor(commands: String) {
+        val command = commands.split(' ')
+        if (command.size >= ROVER_MINIMUM_NEEDED_COMMANDS) {
+            state.positionX = command[ROVER_STARTING_POSITION_X].toInt()
+            state.positionY = command[ROVER_STARTING_POSITION_Y].toInt()
+            state.direction = command[ROVER_FACING_DIRECTION][ROVER_COMMANDLIST_DIRECTION]
         }
     }
 
-    fun go(cms: String) {
-        for (c in cms) {
-            when (c) {
+    fun go(instructions: String) {
+        for (instruction in instructions) {
+            when (instruction) {
                 COMMAND_TURN_LEFT -> {
-                    when (rs.dd) {
-                        DIRECTION_EAST -> rs.dd = DIRECTION_NORTH
-                        DIRECTION_NORTH -> rs.dd = DIRECTION_WEST
-                        DIRECTION_WEST -> rs.dd = DIRECTION_SOUTH
-                        DIRECTION_SOUTH -> rs.dd = DIRECTION_EAST
+                    when (state.direction) {
+                        DIRECTION_EAST -> state.direction = DIRECTION_NORTH
+                        DIRECTION_NORTH -> state.direction = DIRECTION_WEST
+                        DIRECTION_WEST -> state.direction = DIRECTION_SOUTH
+                        DIRECTION_SOUTH -> state.direction = DIRECTION_EAST
                     }
                 }
                 COMMAND_TURN_RIGHT -> {
-                    when (rs.dd) {
-                        DIRECTION_EAST -> rs.dd = DIRECTION_SOUTH
-                        DIRECTION_SOUTH -> rs.dd = DIRECTION_WEST
-                        DIRECTION_WEST -> rs.dd = DIRECTION_NORTH
-                        DIRECTION_NORTH -> rs.dd = DIRECTION_EAST
+                    when (state.direction) {
+                        DIRECTION_EAST -> state.direction = DIRECTION_SOUTH
+                        DIRECTION_SOUTH -> state.direction = DIRECTION_WEST
+                        DIRECTION_WEST -> state.direction = DIRECTION_NORTH
+                        DIRECTION_NORTH -> state.direction = DIRECTION_EAST
                     }
                 }
                 COMMAND_MOVE -> {
-                    when (rs.dd) {
-                        DIRECTION_EAST -> rs.xx++
-                        DIRECTION_SOUTH -> rs.yy--
-                        DIRECTION_WEST -> rs.xx--
-                        DIRECTION_NORTH -> rs.yy++
+                    when (state.direction) {
+                        DIRECTION_EAST -> state.positionX++
+                        DIRECTION_SOUTH -> state.positionY--
+                        DIRECTION_WEST -> state.positionX--
+                        DIRECTION_NORTH -> state.positionY++
                     }
                 }
             }
         }
     }
 
-    val xyd: String
-        get() = "${rs.xx} ${rs.yy} ${rs.dd}"
+    val position: String
+        get() = "${state.positionX} ${state.positionY} ${state.direction}"
 
     fun pos(): String {
-        return xyd
+        return position
     }
 
-    private var rs = RoverState()
+    private var state = RoverState()
 }
 
 class RoverState {
-    var xx: Int = 0
-    var yy: Int = 0
-    var dd: Char = DIRECTION_NORTH
+    var positionX: Int = 0
+    var positionY: Int = 0
+    var direction: Char = DIRECTION_NORTH
 }
 
 private const val ROVER_MINIMUM_NEEDED_COMMANDS = 3
 private const val ROVER_STARTING_POSITION_X = 0
 private const val ROVER_STARTING_POSITION_Y = 1
-private const val ROVER_COMMANDLIST = 2
-private const val ROVER_COMMANDLIST_FIRST_COMMAND = 0
+private const val ROVER_FACING_DIRECTION = 2
+private const val ROVER_COMMANDLIST_DIRECTION = 0
 
 private const val COMMAND_TURN_LEFT = 'L'
 private const val COMMAND_TURN_RIGHT = 'R'
