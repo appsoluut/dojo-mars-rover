@@ -8,8 +8,8 @@
 
 # Mikado
 - [ ] Change var to val (immutable)
-  - [ ] Rover.turnLeft use copy() on state
-  - [ ] Rover.turnRight use copy() on state
+  - [x] Rover.turnLeft use copy() on state
+  - [x] Rover.turnRight use copy() on state
   - [x] Rover.move use copy() on state
   - [x] Rover.constructor use copy() on state
     - [x] Change RoverState to Data Class
