@@ -41,18 +41,12 @@ class Rover {
         }
     }
 
-    fun g(z: Char) {
-        go(z.toString())
-    }
-
     val xyd: String
         get() = "${rs.xx} ${rs.yy} ${rs.dd}"
 
     fun pos(): String {
         return xyd
     }
-
-    constructor() : this("")
 
     private var rs = RoverState()
 }
