@@ -6,7 +6,7 @@ class Rover {
         if (command.size >= ROVER_MINIMUM_NEEDED_COMMANDS) {
             state.positionX = command[ROVER_STARTING_POSITION_X].toInt()
             state.positionY = command[ROVER_STARTING_POSITION_Y].toInt()
-            state.direction = command[ROVER_FACING_DIRECTION][ROVER_COMMANDLIST_DIRECTION]
+            state.heading = command[ROVER_FACING_DIRECTION][ROVER_COMMANDLIST_DIRECTION]
         }
     }
 
@@ -14,27 +14,27 @@ class Rover {
         for (instruction in instructions) {
             when (instruction) {
                 COMMAND_TURN_LEFT -> {
-                    when (state.direction) {
-                        DIRECTION_EAST -> state.direction = DIRECTION_NORTH
-                        DIRECTION_NORTH -> state.direction = DIRECTION_WEST
-                        DIRECTION_WEST -> state.direction = DIRECTION_SOUTH
-                        DIRECTION_SOUTH -> state.direction = DIRECTION_EAST
+                    when (state.heading) {
+                        HEADING_EAST -> state.heading = HEADING_NORTH
+                        HEADING_NORTH -> state.heading = HEADING_WEST
+                        HEADING_WEST -> state.heading = HEADING_SOUTH
+                        HEADING_SOUTH -> state.heading = HEADING_EAST
                     }
                 }
                 COMMAND_TURN_RIGHT -> {
-                    when (state.direction) {
-                        DIRECTION_EAST -> state.direction = DIRECTION_SOUTH
-                        DIRECTION_SOUTH -> state.direction = DIRECTION_WEST
-                        DIRECTION_WEST -> state.direction = DIRECTION_NORTH
-                        DIRECTION_NORTH -> state.direction = DIRECTION_EAST
+                    when (state.heading) {
+                        HEADING_EAST -> state.heading = HEADING_SOUTH
+                        HEADING_SOUTH -> state.heading = HEADING_WEST
+                        HEADING_WEST -> state.heading = HEADING_NORTH
+                        HEADING_NORTH -> state.heading = HEADING_EAST
                     }
                 }
                 COMMAND_MOVE -> {
-                    when (state.direction) {
-                        DIRECTION_EAST -> state.positionX++
-                        DIRECTION_SOUTH -> state.positionY--
-                        DIRECTION_WEST -> state.positionX--
-                        DIRECTION_NORTH -> state.positionY++
+                    when (state.heading) {
+                        HEADING_EAST -> state.positionX++
+                        HEADING_SOUTH -> state.positionY--
+                        HEADING_WEST -> state.positionX--
+                        HEADING_NORTH -> state.positionY++
                     }
                 }
             }
@@ -42,7 +42,7 @@ class Rover {
     }
 
     val position: String
-        get() = "${state.positionX} ${state.positionY} ${state.direction}"
+        get() = "${state.positionX} ${state.positionY} ${state.heading}"
 
     fun pos(): String = position
 
@@ -52,7 +52,7 @@ class Rover {
 class RoverState {
     var positionX: Int = 0
     var positionY: Int = 0
-    var direction: Char = DIRECTION_NORTH
+    var heading: Char = HEADING_NORTH
 }
 
 private const val ROVER_MINIMUM_NEEDED_COMMANDS = 3
@@ -65,7 +65,7 @@ private const val COMMAND_TURN_LEFT = 'L'
 private const val COMMAND_TURN_RIGHT = 'R'
 private const val COMMAND_MOVE = 'M'
 
-private const val DIRECTION_EAST = 'E'
-private const val DIRECTION_NORTH = 'N'
-private const val DIRECTION_WEST = 'W'
-private const val DIRECTION_SOUTH = 'S'
+private const val HEADING_EAST = 'E'
+private const val HEADING_NORTH = 'N'
+private const val HEADING_WEST = 'W'
+private const val HEADING_SOUTH = 'S'
