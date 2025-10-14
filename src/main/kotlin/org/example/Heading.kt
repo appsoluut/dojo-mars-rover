@@ -7,6 +7,13 @@ enum class Heading(val symbol: Char) {
     WEST('W'),
     ;
 
+    fun turnRight() = when (this) {
+        EAST -> SOUTH
+        SOUTH -> WEST
+        WEST -> NORTH
+        NORTH -> EAST
+    }
+
     override fun toString(): String = symbol.toString()
 
     companion object {

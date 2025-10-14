@@ -30,12 +30,7 @@ class Rover {
     }
 
     private fun turnRight() {
-        when (state.heading) {
-            Heading.EAST -> state.heading = Heading.SOUTH
-            Heading.SOUTH -> state.heading = Heading.WEST
-            Heading.WEST -> state.heading = Heading.NORTH
-            Heading.NORTH -> state.heading = Heading.EAST
-        }
+        state.heading = state.heading.turnRight()
     }
 
     private fun turnLeft() {
