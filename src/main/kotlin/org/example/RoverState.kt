@@ -1,8 +1,7 @@
 package org.example
 
 data class RoverState(
-    val positionX: Int = 0,
-    val positionY: Int = 0,
+    val position: Position = Position(),
     var heading: Heading = Heading.NORTH,
 ) {
     fun turnLeft(): RoverState = copy(heading = heading.turnLeft())
@@ -10,7 +9,7 @@ data class RoverState(
     fun turnRight(): RoverState = copy(heading = heading.turnRight())
 
     fun move(): RoverState {
-        val (newX, newY) = heading.move(positionX, positionY)
-        return copy(positionX = newX, positionY = newY)
+        val (newX, newY) = heading.move(position.x, position.y)
+        return copy(position = Position(newX, newY))
     }
 }

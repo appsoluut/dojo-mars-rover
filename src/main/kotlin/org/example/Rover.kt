@@ -4,11 +4,12 @@ class Rover {
     constructor(commands: String) {
         val command = commands.split(' ')
         if (command.size >= ROVER_MINIMUM_NEEDED_COMMANDS) {
-            state =
-                state.copy(
-                    positionX = command[ROVER_STARTING_POSITION_X].toInt(),
-                    positionY = command[ROVER_STARTING_POSITION_Y].toInt(),
+            val position =
+                Position(
+                    x = command[ROVER_STARTING_POSITION_X].toInt(),
+                    y = command[ROVER_STARTING_POSITION_Y].toInt(),
                 )
+            state = state.copy(position = position)
             Heading.from(command[ROVER_FACING_DIRECTION][ROVER_COMMANDLIST_DIRECTION])?.let {
                 state = state.copy(heading = it)
             }
@@ -28,7 +29,7 @@ class Rover {
     }
 
     val position: String
-        get() = "${state.positionX} ${state.positionY} ${state.heading}"
+        get() = "${state.position} ${state.heading}"
 
     fun pos(): String = position
 

@@ -6,11 +6,13 @@
   - [ ] middle man
 
 # Mikado
-- [x] Remove deltaX, deltaY in Heading
-  - [x] NORTH, etc -> Vector(0, 1)
-    - [x] move -> return Pair but using vector
-      - [x] Add Vector to enum class Heading 
-        - [x] Create Vector data class
+- [x] Remove posX, posY from RoverState
+  - [x] use position in Rover.position
+    - [x] Create toString in Position
+  - [x] use position in Rover constructor()
+    - [x] use position in move()
+      - [x] Add position to RoverState
+        - [x] Create Position data class
 
 # RPP
 - [ ] Design Patterns
@@ -53,3 +55,8 @@
   - [x] Rover.move use copy() on state
   - [x] Rover.constructor use copy() on state
     - [x] Change RoverState to Data Class
+- [x] Remove deltaX, deltaY in Heading
+  - [x] NORTH, etc -> Vector(0, 1)
+    - [x] move -> return Pair but using vector
+      - [x] Add Vector to enum class Heading
+        - [x] Create Vector data class
