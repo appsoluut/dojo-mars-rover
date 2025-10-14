@@ -17,25 +17,14 @@ class Rover {
 
     fun go(instructions: String) {
         for (instruction in instructions) {
-            when (instruction) {
-                COMMAND_TURN_LEFT -> turnLeft()
-                COMMAND_TURN_RIGHT -> turnRight()
-                COMMAND_MOVE -> move()
-            }
+            state =
+                when (instruction) {
+                    COMMAND_TURN_LEFT -> state.turnLeft()
+                    COMMAND_TURN_RIGHT -> state.turnRight()
+                    COMMAND_MOVE -> state.move()
+                    else -> state
+                }
         }
-    }
-
-    private fun move() {
-        val (updatedX, updatedY) = state.heading.move(state.positionX, state.positionY)
-        state = state.copy(positionX = updatedX, positionY = updatedY)
-    }
-
-    private fun turnRight() {
-        state = state.copy(heading = state.heading.turnRight())
-    }
-
-    private fun turnLeft() {
-        state = state.copy(heading = state.heading.turnLeft())
     }
 
     val position: String

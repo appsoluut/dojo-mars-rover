@@ -1,18 +1,4 @@
 # TODO
-- [ ] Reorder Responsibilities
-  - [ ] long class
-  - [ ] feature envy
-  - [ ] inappropriate intimacy
-  - [ ] data class
-  - [ ] message chain
-
-# Mikado
-- [ ] Change var to val (immutable)
-  - [x] Rover.turnLeft use copy() on state
-  - [x] Rover.turnRight use copy() on state
-  - [x] Rover.move use copy() on state
-  - [x] Rover.constructor use copy() on state
-    - [x] Change RoverState to Data Class
 
 # RPP
 - [ ] Refine Abstractions
@@ -35,7 +21,13 @@
 - [x] Complexity
   - [x] long method
   - [x] duplicated code
-  -
+- [x] Reorder Responsibilities
+  - [x] long class
+  - [x] feature envy
+  - [x] inappropriate intimacy
+  - [x] data class
+  - [x] message chain
+
 # Mikado
 - [x] Clean up constants and private fields
   - [x] Move move() into Heading.move(Position)
@@ -48,3 +40,9 @@
         - [x] state.heading in Rover.constructor to enum
           - [x] Change heading Char in RoverState to Heading enum
             - [x] Create Heading enum
+- [x] Change var to val (immutable)
+  - [x] Rover.turnLeft use copy() on state
+  - [x] Rover.turnRight use copy() on state
+  - [x] Rover.move use copy() on state
+  - [x] Rover.constructor use copy() on state
+    - [x] Change RoverState to Data Class
