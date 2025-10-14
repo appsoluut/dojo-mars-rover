@@ -34,12 +34,7 @@ class Rover {
     }
 
     private fun turnLeft() {
-        when (state.heading) {
-            Heading.EAST -> state.heading = Heading.NORTH
-            Heading.NORTH -> state.heading = Heading.WEST
-            Heading.WEST -> state.heading = Heading.SOUTH
-            Heading.SOUTH -> state.heading = Heading.EAST
-        }
+        state.heading = state.heading.turnLeft()
     }
 
     val position: String

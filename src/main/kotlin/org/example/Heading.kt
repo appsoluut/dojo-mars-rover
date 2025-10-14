@@ -7,6 +7,13 @@ enum class Heading(val symbol: Char) {
     WEST('W'),
     ;
 
+    fun turnLeft() = when (this) {
+        EAST -> NORTH
+        NORTH -> WEST
+        WEST -> SOUTH
+        SOUTH -> EAST
+    }
+
     fun turnRight() = when (this) {
         EAST -> SOUTH
         SOUTH -> WEST

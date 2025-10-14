@@ -6,7 +6,7 @@
 # Mikado
 - [ ] Clean up constants and private fields
   - [ ] Move move() into Heading.move(Position)
-  - [ ] Move turnLeft() into Heading.turnLeft()
+  - [x] Move turnLeft() into Heading.turnLeft()
   - [x] Move turnRight() into Heading.turnRight()
     - [x] Remove HEADING_* constants
       - [x] in move() compare to heading enum
