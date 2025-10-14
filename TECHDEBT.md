@@ -1,5 +1,7 @@
 # TODO
-- [ ] Make ktlint pass checks
 
 # RPP
 - [ ] ...
+
+# DONE
+- [x] Make ktlint pass checks
