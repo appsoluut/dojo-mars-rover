@@ -8,5 +8,5 @@ data class RoverState(
 
     fun turnRight(): RoverState = copy(heading = heading.turnRight())
 
-    fun move(): RoverState = copy(position = heading.move(position))
+    fun move(): RoverState = copy(position = position.moveBy(heading.vector))
 }

@@ -23,8 +23,6 @@ enum class Heading(val symbol: Char, val vector: Vector) {
             NORTH -> EAST
         }
 
-    fun move(position: Position): Position = position.copy(x = position.x + vector.deltaX, position.y + vector.deltaY)
-
     override fun toString(): String = symbol.toString()
 
     companion object {

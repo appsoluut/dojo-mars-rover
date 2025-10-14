@@ -1,14 +1,14 @@
 # TODO
-- [ ] Refine Abstractions
-  - [ ] long parameter list
-  - [ ] data clump
-  - [ ] primitive obsession
-  - [ ] middle man
+- [x] Refine Abstractions
+  - [x] long parameter list
+  - [x] data clump
+  - [x] primitive obsession
+  - [x] middle man
 
 # Mikado
-- [x] Replace x, y with Position in Heading.move()
-  - [x] RoverState.move use position
-- [x] Return position in move() instead of Pair
+- [x] remove move() from heading
+  - [x] use position.moveBy in RoverState.move
+  - [x] add moveBy to Position class
 
 # RPP
 - [ ] Design Patterns
@@ -63,3 +63,7 @@
     - [x] use position in move()
       - [x] Add position to RoverState
         - [x] Create Position data class
+- [x] Replace x, y with Position in Heading.move()
+  - [x] RoverState.move use position
+- [x] Return position in move() instead of Pair
+
