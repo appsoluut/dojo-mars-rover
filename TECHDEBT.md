@@ -6,13 +6,9 @@
   - [ ] middle man
 
 # Mikado
-- [x] Remove posX, posY from RoverState
-  - [x] use position in Rover.position
-    - [x] Create toString in Position
-  - [x] use position in Rover constructor()
-    - [x] use position in move()
-      - [x] Add position to RoverState
-        - [x] Create Position data class
+- [x] Replace x, y with Position in Heading.move()
+  - [x] RoverState.move use position
+- [x] Return position in move() instead of Pair
 
 # RPP
 - [ ] Design Patterns
@@ -60,3 +56,10 @@
     - [x] move -> return Pair but using vector
       - [x] Add Vector to enum class Heading
         - [x] Create Vector data class
+- [x] Remove posX, posY from RoverState
+  - [x] use position in Rover.position
+    - [x] Create toString in Position
+  - [x] use position in Rover constructor()
+    - [x] use position in move()
+      - [x] Add position to RoverState
+        - [x] Create Position data class
